@@ -1,0 +1,84 @@
+.input-box {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  /* padding-right: 20px; */
+}
+
+.text {
+  display: inline-block;
+  width: 10rem;
+  font-size: 1rem;
+  color: black;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  white-space: nowrap;
+  flex: 1;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input {
+  font-size: 1rem;
+  /* width: 10rem; */
+  padding: 0.4rem;
+  /* background-color: #d3d3d3; */
+  border: 1px solid #ccc;
+
+  /* margin-top: 10px; */
+  flex: 1;
+}
+
+.radio-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: black;
+  font-weight: normal;
+}
+
+.date-input {
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.4rem;
+  /* background-color: #d3d3d3; */
+  border: 1px solid #ccc;
+
+  flex: 1;
+  position: relative;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.date-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input:focus,
+.date-input:focus {
+  outline: none;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #50ce60;
+  cursor: pointer;
+}

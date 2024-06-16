@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* main layout */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+  overflow: scroll;
+  justify-content: center;
+}
+
+.row::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.col {
+  flex: 1 1 32%;
+  max-width: 100%;
+}
+
+.card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  /* border: 1px solid rgba(0, 0, 0, 0.125); */
+  border-radius: 0.25rem;
+  background-color: #f9f9fa;
+  margin-top: 0.6rem;
+}
+
+.primary-heading {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.content {
+  height: 100px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+  .col {
+    flex: 1 1 100%; /* Allow columns to grow, but not shrink; initial width of 32% */
+    max-width: 100%;
+  }
+}
