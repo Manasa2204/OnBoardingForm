@@ -22,7 +22,7 @@ const Popup = ({ isOpen, onClose, header, children }) => {
                             {children}
                         </div>
                         <div className='footer'>
-                            <p>Submit</p>
+                            Submit
                         </div>
                     </div>
                 </div>
