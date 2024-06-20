@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Popup.css'; // Style for the popup
 import { BiX } from "react-icons/bi";
 
-const Popup = ({ isOpen, onClose, header, children }) => {
+const Popup = ({ isOpen, onClose, header, children, onSubmit }) => {
 
     return (
         <>
@@ -21,7 +21,7 @@ const Popup = ({ isOpen, onClose, header, children }) => {
                         <div className="popup-body">
                             {children}
                         </div>
-                        <div className='footer'>
+                        <div className='footer' onClick={onSubmit}>
                             Submit
                         </div>
                     </div>

@@ -4,7 +4,8 @@ import { GoPlus } from "react-icons/go";
 import Popup from './components/Popup';
 import PersonalDetails from './forms/PersonalDetails';
 import { useFormik } from 'formik';
-
+import CommunicationDetails from './forms/CommunicationDetails';
+import PersonalDetailsContent from './form-content/PersonalDetailsContent';
 
 function App() {
 
@@ -23,12 +24,13 @@ function App() {
     setIsOpen(prev => { return { ...prev, [type]: false } });
   };
 
+
   const renderComponent = () => {
     switch (type) {
       case 'personalDetails':
         return <PersonalDetails formik={formik} />;
-      // case 'ComponentB':
-      //   return <ComponentB />;
+      case 'communicationDetails':
+        return <CommunicationDetails formik={formik} />;
       default:
         return null;
     }
@@ -53,6 +55,9 @@ function App() {
       alternateEmail: "",
       phoneNumber: "",
       alternateNumber: "",
+      houseNo: "",
+      houseAddress: "",
+      addressUrl: "",
       panNumber: "",
       panFile: [],
       pfNumber: "",
@@ -96,9 +101,10 @@ function App() {
                       openPopup("personalDetails")
                     }} />
                   </div> :
-                  <div>
 
-                  </div>
+                  <PersonalDetailsContent formik={formik} />
+
+
               }
             </div>
           </div>
@@ -109,7 +115,11 @@ function App() {
               {
                 !visibleContent.communicationDetails ?
                   <div className='content center'>
-                    <GoPlus color='#50ce60' size={25} onClick={() => setVisibleContent({ ...visibleContent, communicationDetails: true })} />
+                    <GoPlus color='#50ce60' size={25} onClick={() => {
+                      setVisibleContent({ ...visibleContent, communicationDetails: true })
+                      setType("communicationDetails");
+                      openPopup("communicationDetails")
+                    }} />
                   </div> : null
               }
             </div>
@@ -193,7 +203,9 @@ function App() {
 
       {/*------------------- popups------------------- */}
 
-      {isOpen[type] && <Popup isOpen={isOpen[type]} onClose={() => closePopup(type)} header={type}>
+      {isOpen[type] && <Popup isOpen={isOpen[type]} onClose={() => closePopup(type)} header={type} onSubmit={() => {
+        closePopup(type)
+      }}>
         {renderComponent()}
       </Popup>}
     </div>

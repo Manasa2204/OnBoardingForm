@@ -41,6 +41,7 @@
   border-radius: 0.25rem;
   background-color: #f9f9fa;
   margin-top: 0.6rem;
+  padding: 1rem;
 }
 
 .primary-heading {
@@ -50,12 +51,34 @@
 }
 
 .content {
-  height: 100px;
+  height: 80px;
 }
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* ------------helper classes---------- */
+.center-horizontal {
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.center-vertical {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 700px) {
